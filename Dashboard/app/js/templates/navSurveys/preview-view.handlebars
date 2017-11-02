@@ -5,17 +5,17 @@
  <div class="questionGroupBlock">
    <header> <span class="qtnGroupHead">{{t _group}} {{QG.order}}</span>
      <h3 class="qtnGroupTitle">{{QG.code}}</h3>
-     <div class="innerContent"> 
+     <div class="innerContent">
        {{#view FLOW.PreviewQuestionGroupView contentBinding="QG"}}
          {{#each Q in view.QGcontent}}
            {{#view FLOW.PreviewQuestionView contentBinding="Q"}}
              {{#if view.isVisible}}
-			 <div class="previewQuestion"> 
+			 <div class="previewQuestion">
                 <h1 class="questionNbr"><span>{{Q.order}}} </span>{{Q.text}}</h1>
                     {{#if view.isOptionType}}
                        {{#each view.optionsList}}
                        <!-- FIXME this should be checkbuttons if Allow Multiple is true -->
-                          {{view Em.RadioButton title=this.value option=this.value group="options" valueBinding="view.optionChoice"}} 
+                          {{view Em.RadioButton title=this.value option=this.value group="options" valueBinding="view.optionChoice"}}
                         {{/each}}
                     {{else}}
                       {{#if view.isNumberType}}
@@ -24,8 +24,8 @@
                         {{#if view.isTextType}}
                           {{view Ember.TextField valueBinding="view.answer" size=10 }}
                         {{else}}
-                          {{#if view.isDateType}} 
-                             {{view FLOW.DateField2 valueBinding="view.answer" size=30}} 
+                          {{#if view.isDateType}}
+                             {{view FLOW.DateField2 valueBinding="view.answer" size=30}}
                           {{else}}
                             {{#if view.isGeoType}}
                               <h3>{{t _the_gps_of_the_device_is_used_here}}</h3>
@@ -49,8 +49,8 @@
                                      		{{#each item in view.levelNameList}}
                                      			<h4>{{item}}</h4> {{view Ember.TextField valueBinding="view.answer" size=10 }}
                                      		{{/each}}
-                                     		<h4>{{t _cascade_preview_text}}</h4>
-                                     		<h4><a href="http://flow.readthedocs.org/en/latest/docs/dashboard/4-data.html#cascading-resources-tab" target="_blank">{{t _link_to_documentation}}</a></h4>
+                                     		<!--<h4>{{t _cascade_preview_text}}</h4>
+                                     		<h4><a href="http://flow.readthedocs.org/en/latest/docs/dashboard/4-data.html#cascading-resources-tab" target="_blank">{{t _link_to_documentation}}</a></h4>-->
                                      	{{/if}}
                                      {{/if}}
                                   {{/if}}
@@ -60,13 +60,13 @@
                           {{/if}}
                         {{/if}}
                       {{/if}}
-                    {{/if}}    
+                    {{/if}}
                 </div>
               {{/if}}
             {{/view}}
           {{/each}}
        {{/view}}
      </div>
- </div>    
+ </div>
 {{/each}}
 </div>
